@@ -26,10 +26,11 @@ jobs:
       run: dotnet publish ./src/BlazorWasmApp/BlazorWasmApp/BlazorWasmApp.csproj --no-restore --configuration Release --output  ${{ env.PUBLISH_DIR }}
     - name: Rewrite base href
       if: success()
-      uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
+      uses: mgrman/ghaction-rewrite-base-href@master
       with:
         html_path: ${{ env.PUBLISH_DIR_WWWROOT }}/index.html
         base_href: ${{ github.event.repository.name }}
+        root_path: ${{ env.PUBLISH_DIR_WWWROOT }}
     - name: Add .nojekyll file
       run: touch ${{ env.PUBLISH_DIR_WWWROOT }}/.nojekyll
     - name: Commit to GitHub pages Repo
