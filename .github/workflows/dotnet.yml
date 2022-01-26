@@ -20,5 +20,5 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore ./src/BlazorWasmApp/BlazorWasmApp/BlazorWasmApp.csproj
     - name: Build
-      run: dotnet build --no-restore --project ./src/BlazorWasmApp/BlazorWasmApp/BlazorWasmApp.csproj
+      run: dotnet build ./src/BlazorWasmApp/BlazorWasmApp/BlazorWasmApp.csproj --no-restore
 
