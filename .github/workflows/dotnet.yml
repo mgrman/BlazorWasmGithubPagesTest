@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore --project src/BlazorWasmApp/BlazorWasmApp/BlazorWasmApp.csproj
+      run: dotnet restore ./src/BlazorWasmApp/BlazorWasmApp/BlazorWasmApp.csproj
     - name: Build
-      run: dotnet build --no-restore --project src/BlazorWasmApp/BlazorWasmApp/BlazorWasmApp.csproj
+      run: dotnet build --no-restore --project ./src/BlazorWasmApp/BlazorWasmApp/BlazorWasmApp.csproj
 
